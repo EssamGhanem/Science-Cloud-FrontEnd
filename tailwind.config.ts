@@ -11,6 +11,17 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        greens:"#556B2F",
+        prime:"#161D6F",
+        secondary:"#0B2F9F",
+        therd:"#98DED9",
+        fourth:"C7FFD8"
+      },
+
+      fontFamily:{
+        cairo:["Cairo", 'sans-serif'],
+        aref :["Aref Ruqaa", 'serif'],
+        kanit:["Kanit", "sans-serif"]
       },
     },
   },
