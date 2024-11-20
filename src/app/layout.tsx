@@ -1,9 +1,7 @@
+
 import type { Metadata } from "next";
-import favicon from '@/app/favicon.ico';
 
 import "./globals.css";
-import NavBar from "@/components/NavBar";
-
 
 
 export const metadata: Metadata = {
@@ -18,6 +16,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
+  
   return (
     <html lang="ar">
       {/* <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> */}
@@ -26,10 +28,12 @@ export default function RootLayout({
         href='/app/favicon.ico'
       />
       <body
-        className={` antialiased  pt-[150px] h-[300vh] `}
+        className={` antialiased  h-[200vh] `}
       >
-        <NavBar />
+      
         {children}
+       
+        
 
       </body>
     </html>

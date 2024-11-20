@@ -6,10 +6,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import clsx from 'clsx';
+
 const pages = [
   {
     href: "/",
-    label: "الرأيسيه"
+    label: "الرئيسيه"
   },
   {
     href: "/courses",
@@ -20,7 +21,7 @@ const pages = [
     label: "تواصل_معانا"
   },
   {
-    href: "/student",
+    href: "/myprofile",
     label: "صفحتي"
   },
   {
@@ -34,7 +35,6 @@ const pages = [
 export default function NavBar() {
 
   const pathname = usePathname();
-  // let isActive = false ;
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const openClose = () => {
@@ -53,7 +53,7 @@ export default function NavBar() {
 
 
       <nav className='px-[5%] bg-white flex flex-row-reverse md:h-[100px] h-[70px] w-[100%] 
-           fixed top-0 justify-between items-center  rtl shadow-md'>
+           fixed top-0 justify-between items-center   shadow-lg '>
 
         <div className='logo'>
           <Link href={'/'}>
@@ -61,19 +61,24 @@ export default function NavBar() {
           </Link>
 
         </div>
-        <div className='pages items-center hidden lg:flex flex-row-reverse w-[45%] justify-around '>
+        
+        
+        <div className='pages items-center hidden lg:flex 
+        flex-row-reverse w-[45%] justify-around '>
           {
             pages.map(ele => {
               const isActive = pathname == ele.href ? "isActive" : "";
-              return <Link href={ele.href} key={ele.label} className={isActive + " p-2 lg:w-[100px]  w-[70px] text-center  "} >
+              return <Link href={ele.href} key={ele.label} className={ " p-2 lg:w-[100px]  w-fit text-center  "} >
 
-                <span className=' transform hover:scale-125 transition duration-300 p-1  hover:bg-red-0  font-cairo lg:text-[16px] block text-[14px] ' >{ele.label}  </span>
+                <span className={isActive + ' transform hover:scale-125 transition duration-300 p-1  hover:bg-red-0  font-cairo lg:text-[16px] block text-[14px] inline-block'} >{ele.label}  </span>
               </Link>
 
             })
 
           }
         </div>
+
+
         <div className='auth lg:text-[16px] text-[12px]  flex-row-reverse justify-center gap-4 w-[30%] text-center hidden md:flex'>
           <Link href={'/login'} className=' font-cairo font-bold border-2 border-prime px-3 py-1 text-prime'>تسجيل الدخول</Link>
           <Link href={'/register'} className=' font-cairo font-bold border-prime border-2 bg-prime px-3 py-1 text-white '> انشاء حساب</Link>
@@ -86,8 +91,9 @@ export default function NavBar() {
 
       </nav>
 
-      <div onClick={() => openClose()} className={clsx("w-full h-full bg-black/50 absolute top-0 translate-x-[-105%] duration-200 ", menuIsOpen && "translate-x-[0%] ")}>
-        <div className={clsx('sidebar w-[250px]  md:w-[350px] h-full bg-white hid p-5 duration-500 translate-x-[-105%] ', menuIsOpen && "translate-x-[0%] ")}>
+          {/* sidebar  */}
+      <div onClick={() => openClose()} className={clsx("w-full h-full bg-black/50 fixed top-0 translate-x-[-105%] duration-200 ", menuIsOpen && "translate-x-[0%] ")}>
+        <div className={clsx('sidebar w-[250px]  md:w-[350px] h-full bg-white hid p-5 duration-500 translate-x-[-105%]  ', menuIsOpen && "translate-x-[0%] ")}>
           <div className='text-right'>
             <button className='bg-prime p-1 text-white rounded-[5px] ' onClick={() => openClose()}><GrClose /></button>
           </div>

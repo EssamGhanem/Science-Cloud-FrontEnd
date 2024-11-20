@@ -15,7 +15,10 @@ const config: Config = {
         prime:"#161D6F",
         secondary:"#0B2F9F",
         therd:"#98DED9",
-        fourth:"C7FFD8"
+        fourth:"#C7FFD8"
+      },
+      boxShadow: {
+        'start': '0 0px 40px 20px #161d6f;',
       },
 
       fontFamily:{
