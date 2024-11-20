@@ -53,6 +53,7 @@ export type request = {
   studentId: string ;
   courseId:string ;
   state: reqState;
+  img:string;
 }
 
 

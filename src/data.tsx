@@ -6,37 +6,6 @@ import { request } from "./components/types";
 
 
 
-export const courseRequests: request[] = [
-
-  {
-    id: '1',
-    studentId: '1' ,
-    courseId: '1' ,
-    state: 'pending'
-  },
-  {
-    id: '2',
-    studentId: '2' ,
-    courseId: '2' ,
-    state: 'pending'
-  },
-  {
-    id: '3',
-    studentId: '3' ,
-    courseId: '3' ,
-    state: 'pending'
-  },
-
-]
-
-
-
-
-
-
-
-
-
 export const students: student[] = [
 
   {
@@ -108,6 +77,49 @@ export const students: student[] = [
 
 ]
 
+// export type request = {
+//   id:string;
+//   studentId: string ;
+//   courseId:string ;
+//   state: reqState;
+//   img:string;
+// }
+
+
+export  const requests :request[] = [
+  {
+    id:'1',
+    studentId:"1",
+    courseId:"1",
+    state:"accepted",
+    img:""
+
+  },
+  {
+    id:'2',
+    studentId:"2",
+    courseId:"1",
+    state:"pending",
+    img:""
+
+  },
+  {
+    id:'3',
+    studentId:"3",
+    courseId:"2",
+    state:"pending",
+    img:""
+
+  },
+  {
+    id:'4',
+    studentId:"4",
+    courseId:"2",
+    state:"rejected",
+    img:""
+
+  },
+]
 
 
 

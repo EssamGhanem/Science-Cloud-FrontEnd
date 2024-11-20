@@ -38,7 +38,7 @@ export default function SessionCard(params: { session: session }) {
 
     <div dir='rtl' className=' w-full  h-[50px] flex justify-between px-[20px] bg-black/20 my-2 p-1 '>
 
-      <h3 className=' flex items-center  w-full mx-2'><Link className='w-full' href={'./session/' + session.id} >{session.title}</Link>  </h3>
+      <h3 className=' flex items-center  w-full mx-2'><Link className='w-full' href={'/dashboard/sessions/' + session.id} >{session.title}</Link>  </h3>
       <div className='buttons flex gap-2 justify-between   text-[12px] items-center '>
         <button className=' p-2 bg-red-600 text-white rounded-[5px] duration-300 hover:shadow-prime  hover:scale-90 hover:shadow ' onClick = {()=>{openDeleteSession()}}  >Delete</button>
         <button className='p-2  bg-green-600 text-white rounded-[5px]  duration-300 hover:shadow-prime  hover:scale-90 hover:shadow ' onClick={() => { openEditeForm() }}>Update</button>
