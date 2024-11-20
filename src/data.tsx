@@ -85,7 +85,7 @@ export const students: student[] = [
 //   img:string;
 // }
 
-import img from "../public/requestImg/requestTestImg.jpeg"
+
 
 export  const requests :request[] = [
   {
