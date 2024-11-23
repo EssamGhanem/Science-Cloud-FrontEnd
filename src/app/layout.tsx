@@ -19,23 +19,22 @@ export default function RootLayout({
 
 
 
-  
-  return (
-    <html lang="ar">
-      {/* <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> */}
-      <link
-        rel="icon"
-        href='/app/favicon.ico'
-      />
-      <body
-        className={` antialiased  h-[200vh] `}
-      >
-      
-        {children}
-       
-        
 
+  return (
+    <html lang="ar"   >
+      <head >
+
+     
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+      <link rel="icon" href='/app/favicon.ico' />
+
+      </head>
+      <body className=" min-h-[100vh] overflow-x-hidden  " >
+
+        {children}
       </body>
+
+
     </html>
   );
 }

@@ -53,7 +53,7 @@ export default function NavBar() {
 
 
       <nav className='px-[5%] bg-white flex flex-row-reverse md:h-[100px] h-[70px] w-[100%] 
-           fixed top-0 justify-between items-center   shadow-lg '>
+           fixed top-0 justify-between items-center   shadow-lg z-20'>
 
         <div className='logo'>
           <Link href={'/'}>
@@ -92,7 +92,7 @@ export default function NavBar() {
       </nav>
 
           {/* sidebar  */}
-      <div onClick={() => openClose()} className={clsx("w-full h-full bg-black/50 fixed top-0 translate-x-[-105%] duration-200 ", menuIsOpen && "translate-x-[0%] ")}>
+      <div onClick={() => openClose()} className={clsx("w-full h-full z-20 bg-black/50 fixed top-0 translate-x-[-105%] duration-200 ", menuIsOpen && "translate-x-[0%] ")}>
         <div className={clsx('sidebar w-[250px]  md:w-[350px] h-full bg-white hid p-5 duration-500 translate-x-[-105%]  ', menuIsOpen && "translate-x-[0%] ")}>
           <div className='text-right'>
             <button className='bg-prime p-1 text-white rounded-[5px] ' onClick={() => openClose()}><GrClose /></button>

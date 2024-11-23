@@ -43,11 +43,12 @@ const Links = [
 
 export default function sidebar() {
   return (
-    <div className='bg-secondary text-lg md:p-[5%] p-[10%] text-white
-      flext flex-col h-full
+    <div className='bg-secondary text-lg md:p-[0.5%] p-[1%] text-white
+      flext flex-col h-[100vh] fixed w-[20%]
     '>
       <div className='logo '>
-        <h1 className='bold font-mono text-center lg:text-[18px] text-[14px]'>Science Clould</h1>
+        <h1 className='bold font-mono text-center lg:text-[18px] text-[14px] hover:text-[22px] duration-300'><Link href={'/'}> Science Clould</Link></h1>
+        <p className='bold font-mono text-center lg:text-[18px] text-[14px]'>Dashboard</p>
       </div>
       <br />
       <div className='pages flex-col'>

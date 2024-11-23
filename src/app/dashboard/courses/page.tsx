@@ -9,7 +9,7 @@ export default function page() {
 
   
   return (
-    <div className='flex flex-col justify-center p-5 md:p-10 items-center '>
+    <div className='flex flex-col justify-center p-2 md:p-10 items-center '>
         <AddCourse/> 
         <CoursesList />    
     </div>

@@ -26,6 +26,10 @@ const config: Config = {
         aref :["Aref Ruqaa", 'serif'],
         kanit:["Kanit", "sans-serif"]
       },
+      backgroundImage: {
+        'hero-BG': "url('/home_bg_img.png')",
+        
+      }
     },
   },
   plugins: [],

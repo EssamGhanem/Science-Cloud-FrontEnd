@@ -58,7 +58,7 @@ export default function CourseCard(params: { course: course }) {
         </Link>
       <div className=' font-cairo font bold text-lg flex max-md:flex-row-reverse  flex-col gap-5 justify-between max-md:w-[100%] max-md:px-[20px] max-md:items-center '>
         <h3 className='hh2'>{course.price}EG</h3>
-        <button className=' hover:scale-110 duration-300 outline-none border-none p-2 bg-prime text-white w-fit text-center 
+        <button className='  duration-300 outline-none border-none p-2 bg-prime text-white w-fit text-center 
         rounded-md max-md:text-[12px] max-md:px-3 py-1 px-4' 
         onClick={()=>openRequestForm()}
         >انضم</button>

@@ -48,37 +48,37 @@ export default function AddCourseForm() {
       <div className='flex justify-center w-full'>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='p-4 px-[8%] bg-prime/90 w-[70%] flex justify-center flex-col
+          className='p-4 px-[8%] bg-prime/90 w-[90%] flex justify-center flex-col
           rounded-lg'
         >
           <div className='formCourseDiv'  >
-            <label className='formCourseLabel ' >title</label>
+            <label className='formCourseLabel font-kanit' >Title</label>
             <input dir='rtl' {...register("title")}  className='formCourseInput ' type="text" name='title' />
             {errors.title && <div className=' text-red-500 '> {errors.title.message} </div> }
           </div>
 
           <div className='formCourseDiv  ' >
-            <label className='formCourseLabel ' >Description</label>  
-            <textarea dir='rtl' {...register("description")} className='formCourseInput h-[100px] md:h-[150px] resize-none p-2' name="description" ></textarea> 
+            <label className='formCourseLabel  font-kanit' >Description</label>  
+            <textarea dir='rtl' {...register("description")} className='formCourseInput h-[120px] md:h-[150px] resize-none p-2' name="description" ></textarea> 
             {errors.description && <div className=' text-red-500 '> {errors.description.message} </div> }
           </div>
 
           <div className='formCourseDiv ' >
-            <label className='formCourseLabel ' >Price</label>
+            <label className='formCourseLabel  font-kanit' >Price</label>
             <input dir='rtl'  {...register("price")} className='formCourseInput ' type="text" name='price' />
             {errors.price && <div className=' text-red-500 text-bold '> {errors.price.message} </div> }
             
           </div>
 
           <div className='formCourseDiv bg-white/30 p-2 rounded-lg '  >
-            <label className='formCourseLabel ' >Image</label>
+            <label className='formCourseLabel font-kanit ' >Image</label>
             <input dir='rtl' {...register("image")} className='formCourseInput text-prime border-none ' type="file" name='image' />
             {/* {errors.image && <div className=' text-red-400 '> {errors.image.message} </div> } */}
           </div>
 
-          <div className='formCourseDiv'>
-            <button type='submit' className='bg-prime text-white font-mono
-             rounded-md p-2 text-center w-full text-[18px] '>Submit</button>
+          <div className='formCourseDiv '>
+            <button type='submit' className='bg-prime text-white  
+             rounded-md p-2 text-center w-full text-[18px] font-kanit '>Submit</button>
 
           </div>
 
