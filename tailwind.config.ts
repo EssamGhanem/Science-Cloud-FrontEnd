@@ -29,7 +29,22 @@ const config: Config = {
       backgroundImage: {
         'hero-BG': "url('/home_bg_img.png')",
         
-      }
+      },
+      keyframes: {
+        moveBackgroundImage: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '50%': { backgroundPosition: '0% 500%' },
+          '100%': { backgroundPosition: '0% 1000%' },
+        }
+      },
+      animation: {
+        moveBackgroundImageSm: 'moveBackgroundImage 100s linear infinite',
+        moveBackgroundImageMd: 'moveBackgroundImage 100s linear infinite',
+        moveBackgroundImage: 'moveBackgroundImage 25s linear infinite',
+      },
+      clipPath: {
+        'twoChoice-polygon': 'polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%)',
+      },
     },
   },
   plugins: [],

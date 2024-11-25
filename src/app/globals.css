@@ -17,6 +17,100 @@
     text-wrap: balance;
   }
 
+  @layer utilities {
+    .clip-custom-polygon {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+    }
+  }
+
+  @layer utilities {
+    .clip-custom-polygon-hover {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+
+  @layer utilities {
+    .backgroundImgPosition {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+
+  @layer utilities {
+    .backgroundImgSize {
+      background-size: 50%;
+    }
+  }
+
+  @layer utilities {
+    .md-backgroundImgSize {
+      background-size: 70%;
+    }
+  }
+
+  @layer utilities {
+    .sm-backgroundImgSize {
+      background-size: 110%;
+    }
+  }
+
+  @layer utilities {
+    .typingAnimation {
+      overflow: hidden;
+      white-space:nowrap;
+      width: 100%;
+      animation: 
+      typing 3s linear ,
+      cursor 0.4s step-end 10 alternate;
+    }
+
+    @keyframes cursor {
+      50% {
+        border-color: white
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0% 
+      }
+    }
+
+  }
+
+  @keyframes cloudMove {
+    0% {
+      stroke-dasharray: 1400;
+      stroke-dashoffset: 1400;
+    }    25% {
+      
+      stroke-dasharray: 1400;
+
+      stroke-dashoffset: 2800;
+
+    }
+
+    50% {
+      
+      stroke-dasharray: 1400;
+
+      stroke-dashoffset: 2800;
+
+    }
+
+    75% {
+      
+      stroke-dasharray: 1400;
+
+      stroke-dashoffset: 2800;
+
+    }
+
+    100% {
+      stroke-dasharray: 1400;
+
+      stroke-dashoffset: 4200;
+    }
+  }
 
 }
 
@@ -44,19 +138,21 @@
   .isSelected {
     @apply bg-prime text-white;
   }
-  .hh3{
+
+  .hh3 {
     @apply lg:text-[22px] text-[14px];
   }
-  .hh2{
+
+  .hh2 {
     @apply text-[22px] font-cairo font-bold max-sm:text-[16px];
   }
 
-  .client-page{
-    @apply px-[10%]  w-full ;
+  .client-page {
+    @apply px-[10%] w-full;
   }
 
-  .AbsoluteForm{
-    @apply w-full h-[100vh] z-30  bg-black/80 flex justify-center items-center fixed top-0 left-0 ;
+  .AbsoluteForm {
+    @apply w-full h-[100vh] z-30 bg-black/80 flex justify-center items-center fixed top-0 left-0;
   }
 
 

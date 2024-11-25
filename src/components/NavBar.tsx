@@ -18,7 +18,7 @@ const pages = [
   },
   {
     href: "/contact",
-    label: "تواصل_معانا"
+    label: "تواصل\xa0\xa0معانا"
   },
   {
     href: "/myprofile",
@@ -64,13 +64,13 @@ export default function NavBar() {
         
         
         <div className='pages items-center hidden lg:flex 
-        flex-row-reverse w-[45%] justify-around '>
+        flex-row-reverse gap-4   justify-around w-fit '>
           {
             pages.map(ele => {
               const isActive = pathname == ele.href ? "isActive" : "";
               return <Link href={ele.href} key={ele.label} className={ " p-2 lg:w-[100px]  w-fit text-center  "} >
 
-                <span className={isActive + ' transform hover:scale-125 transition duration-300 p-1  hover:bg-red-0  font-cairo lg:text-[16px] block text-[14px] inline-block'} >{ele.label}  </span>
+                <span className={isActive + ' transform hover:scale-125 transition duration-300 p-1  hover:bg-red-0  font-cairo lg:text-[18px]  text-[16px] inline-block'} >{ele.label}  </span>
               </Link>
 
             })
