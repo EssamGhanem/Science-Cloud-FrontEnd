@@ -26,7 +26,7 @@ export default function RootLayout({
 
      
       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-      <link rel="icon" href='/app/favicon.ico' />
+      <link rel="icon" href='/favicon.ico' />
 
       </head>
       <body className=" min-h-[100vh] overflow-x-hidden  " >

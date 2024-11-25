@@ -20,12 +20,10 @@ export default function TwoChoice() {
 
 
         {/* Right */}
-        <div className='Right lg:w-[60%] w-[50%] max-sm:w-full h-full bg-white border-prime  shadow-lg border-l-0 lg:pl-[12%] p-5 duration-500 md:hover:w-[90%]  lg:clip-custom-polygon flex justify-start flex-col items-center '
-
-       
-        >
+        <div className='Right lg:w-[60%] w-[50%] max-sm:w-full h-full bg-white border-prime  shadow-lg border-l-0 lg:pl-[12%] p-5 duration-500 md:hover:w-[90%]  lg:clip-custom-polygon flex justify-start flex-col items-center '>
           <p className='white text-[32px] text-prime font-cairo max-sm:text-[26px]'>المحاضرات الاون لاين</p>
-        </div>
+        
+          </div>
 
       </div>
 

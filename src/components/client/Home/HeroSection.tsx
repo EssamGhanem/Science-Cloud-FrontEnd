@@ -27,7 +27,7 @@ export default function HeroSection() {
             </div>
 
             {/* Right Section */}
-            <div className=' w-[45%] flex justify-center items-center flex-col  '>
+            <div className=' w-[45%] flex justify-center items-center flex-col mt-10  '>
             <svg
                 fill="#ffffff"
           
@@ -35,7 +35,7 @@ export default function HeroSection() {
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="-10 0 540.001 512.001"
-                className="stroke-white stroke-[3px] fill-transparent absolute z-[-1] w-[50%] right-[0]  "
+                className="stroke-therd/50 stroke-[3px] fill-transparent absolute z-[-1]   "
                   style={ { strokeDasharray:0, strokeDashoffset: 0 , animation:' cloudMove 8s ease-in-out infinite;'}}
               >
                 <path
