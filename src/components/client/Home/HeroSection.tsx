@@ -7,7 +7,7 @@ export default function HeroSection() {
       <div className="h-fit py-[100px] bg-prime max-sm:h-fit relative w-full bg-contain">
         {/* Background Layer */}
         <div
-          className="absolute inset-0 backgroundImgSize max-sm:sm-backgroundImgSize 
+          className="absolute inset-0 backgroundImgSize max-sm:sm-backgroundImgSize w-full h-full 
           animate-moveBackgroundImage max-md:md-backgroundImgSize max-sm:animate-moveBackgroundImageSm  max-md:animate-moveBackgroundImageMd "
           style={{
             backgroundImage: "url('/home_bg_img.png')",
@@ -17,7 +17,7 @@ export default function HeroSection() {
         ></div>
 
         {/* Content Layer */}
-        <div className="relative z-10 h-full w-full justify-center items-center px-[4%] ">
+        <div className=" relative z-10 h-full w-full justify-center items-center px-[4%] ">
 
           <div className="relative w-[100%] h-[80%]  flex justify-between items-center max-sm:flex-col">
             {/* Left Section */}
