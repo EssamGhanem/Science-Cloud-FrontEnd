@@ -54,6 +54,13 @@
   }
 
   @layer utilities {
+    .priceBackGroundSize{
+      background-size: 100% 100%;
+    }
+  }
+
+
+  @layer utilities {
     .typingAnimation {
       overflow: hidden;
       white-space:nowrap;
@@ -140,11 +147,11 @@
   }
 
   .hh3 {
-    @apply lg:text-[22px] text-[14px];
+    @apply lg:text-[20px] text-[16px];
   }
 
   .hh2 {
-    @apply text-[22px] font-cairo font-bold max-sm:text-[16px];
+    @apply text-[26px] font-cairo font-bold max-sm:text-[18px];
   }
 
   .client-page {

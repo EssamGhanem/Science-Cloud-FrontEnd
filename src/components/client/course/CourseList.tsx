@@ -1,10 +1,11 @@
 import React from 'react'
-import { courses} from '@/data'
+
 import CourseCard from './CourseCard';
+import { course } from '@/components/types';
 
 
-export default function CourseList() {
-  const coursesList = courses;
+export default function CourseList(params :{courses:course[]}) {
+  const coursesList = params.courses;
   
   return (
     <div>

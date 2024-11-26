@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroSection from './HeroSection'
 import TwoChoice from './TwoChoice'
+import CoursesSecion from './CoursesSecion'
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
 
     <HeroSection />
     <TwoChoice />
+    <CoursesSecion />
       
 
     </div>
