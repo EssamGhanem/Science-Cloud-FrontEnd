@@ -1,14 +1,14 @@
 "use client"
 import { course } from '@/components/types'
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import Image from 'next/image';
 import SessionsList from '../session/SessionsList';
-import Enrolled from './Enrolled';
-import JoinBox from './JoinBox';
+// import Enrolled from './Enrolled';
+// import JoinBox from './JoinBox';
 export default function CourseFound(params:{course:course}) {
     const course = params.course;
     const sessions = course.sessions
-    const [enrolled,setEnrolled] = useState(false);
+    // const [enrolled,setEnrolled] = useState(false);
 
   
     return (
@@ -31,10 +31,10 @@ export default function CourseFound(params:{course:course}) {
     <p className='hh3 font-bold mb-4 '>المحتوي</p>
       <SessionsList sessions={sessions} />
     </div>
-        {
+        {/* {
           enrolled? <Enrolled/>:<JoinBox/>
         }
-    
+     */}
   </div>
   )
 }
