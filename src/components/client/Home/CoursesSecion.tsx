@@ -18,7 +18,7 @@ export default function CoursesSecion() {
 
       {/* Courses list */}
 
-      <div className=' w-full h-full flex justify-around items-start pb-8  max-lg:flex-wrap'>
+      <div className=' w-full h-full flex justify-around items-start pb-8 flex-wrap'>
         {
           lastCourses.map((course) => {
             return <HomeCourseCard course={course} key={course.id} />;

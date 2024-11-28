@@ -7,7 +7,7 @@ export default function CoursesPage() {
   return (
     <>
 
-      <div dir='rtl' className=' client-page p-container '>
+      <div dir='rtl' className=' '>
         <CourseList courses={courses} />
       </div>
 

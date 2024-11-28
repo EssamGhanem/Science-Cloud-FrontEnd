@@ -47,7 +47,7 @@ export default function NavBar() {
 
 
   }
-  console.log(menuIsOpen);
+ 
   return (
     <>
 
