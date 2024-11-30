@@ -53,7 +53,7 @@ export default function NavBar() {
 
 
       <nav className='px-[5%] bg-white flex flex-row-reverse md:h-[100px] h-[70px] w-[100%] 
-           fixed top-0 justify-between items-center   shadow-lg z-20'>
+           fixed top-0 justify-between items-center   shadow-lg shadow-black/30 z-20'>
 
         <div className='logo'>
           <Link href={'/'}>

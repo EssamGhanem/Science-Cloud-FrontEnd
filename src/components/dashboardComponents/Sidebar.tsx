@@ -44,7 +44,7 @@ const Links = [
 export default function sidebar() {
   return (
     <div className='bg-secondary text-lg md:p-[0.5%] p-[1%] text-white
-      flext flex-col h-[100vh] fixed w-[20%]
+      flext flex-col h-[100vh] fixed w-[20%] z-10
     '>
       <div className='logo '>
         <h1 className='bold font-mono text-center lg:text-[18px] text-[14px] hover:text-[22px] duration-300'><Link href={'/'}> Science Clould</Link></h1>

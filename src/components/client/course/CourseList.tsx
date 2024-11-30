@@ -23,9 +23,9 @@ export default function CourseList(params: { courses: course[] }) {
   return (
     <>
 
-      <div className='mb-12 flex w-full justify-center'>
+      <div dir='rtl' className='mb-12 flex w-full justify-center'>
             <form>
-                <input  type="text" onChange={(e)=>setSearchText(e.target.value)} className='pr-4 border-2 p-2 border-prime outline-none font-cairo text-lg w-[400px] rounded-xl' placeholder='بحث'  />
+                <input  type="text" onChange={(e)=>setSearchText(e.target.value)} className='pr-4 border-2 p-2 border-prime outline-none font-cairo text-lg max-sm:w-[200px]  w-[400px] rounded-xl' placeholder='بحث'  />
             </form>
       </div>
 

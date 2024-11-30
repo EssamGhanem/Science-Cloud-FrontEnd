@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import Footer from "@/components/Footer";
+
 
 
 export const metadata: Metadata = {
@@ -30,11 +30,11 @@ export default function RootLayout({
       <link rel="icon" href='/favicon.ico' />
 
       </head>
-      <body className=" min-h-[100vh] overflow-x-hidden relative pb-[400px] " >
+      <body className=" min-h-[100vh] overflow-x-hidden relative  " >
 
         {children}
 
-        <Footer/>
+       
       </body>
 
 

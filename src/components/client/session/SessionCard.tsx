@@ -11,10 +11,10 @@ export default function SessionCard(params:{session:session}) {
   const session = params.session;
 
   return (
-    <Link href={'/sessions/'+session.id}>
+    <Link href={'/sessions/'+session.id} >
     
    
-    <div dir='ltr' className=' p-2 rounded-md bg-therd px-5 mb-4 flex justify-between 
+    <div dir='rtl' className=' p-2 rounded-md bg-gradient-to-t from-prime/60 to-prime/30 px-5 mb-4 flex justify-between 
     items-center hover:text-white hover:bg-prime  duration-300 '>
         <h3 className='hh3'>{session.title}</h3>
 

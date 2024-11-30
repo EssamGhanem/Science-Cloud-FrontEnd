@@ -66,7 +66,7 @@
       white-space:nowrap;
       width: 100%;
       animation: 
-      typing 3s linear ,
+      typing 2s linear ,
       cursor 0.4s step-end 10 alternate;
     }
 
@@ -147,11 +147,11 @@
   }
 
   .hh3 {
-    @apply lg:text-[20px] text-[16px];
+    @apply lg:text-[16px] text-[22px];
   }
 
   .hh2 {
-    @apply text-[26px] font-cairo font-bold max-sm:text-[18px];
+    @apply text-[32px] font-cairo font-bold max-sm:text-[22px];
   }
 
   .client-page {

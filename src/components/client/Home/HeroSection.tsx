@@ -11,7 +11,7 @@ export default function HeroSection() {
           animate-moveBackgroundImage max-md:md-backgroundImgSize max-sm:animate-moveBackgroundImageSm  max-md:animate-moveBackgroundImageMd "
           style={{
             backgroundImage: "url('/home_bg_img.png')",
-            opacity: 0.07, // Only applies to this layer
+            opacity: 0.07, 
             zIndex: 1,
           }}
         ></div>
