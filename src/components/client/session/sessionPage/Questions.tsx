@@ -22,8 +22,8 @@ export default function Questions(params: { questions: question[] }) {
 
 
   return (
-    <div dir='ltr' className='w-full my-10 '>
-      <h3>Quesions</h3>
+    <div dir='ltr' className='w-full my-10  border-2 border-prime pb-4 p-2 rounded-xl '>
+      <h3 className=' text-prime text-[22px] font-bold text-center ' >Quesions</h3>
       <Provider store={store} >
 
       

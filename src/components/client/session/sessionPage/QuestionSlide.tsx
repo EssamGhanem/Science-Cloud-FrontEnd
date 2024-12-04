@@ -66,7 +66,7 @@ export default function QuestionSlide( params:{questions:question[]} ) {
     
    
     {  result ? <Result score={ score } numberOfQuestions={questions.length} questions={questions} /> :     <div> 
-      <h3 className='font-bold border-b-2 pl-3 '>{currentQuestion + 1} of {questions.length}</h3>
+      <h3 className='font-bold border-b-2 pl-3  border-prime w-fit px-3 mb-6'>{currentQuestion + 1} of {questions.length}</h3>
 
 
       <p className='text-[16px] md:text-[18px] mb-2'>
@@ -82,7 +82,7 @@ export default function QuestionSlide( params:{questions:question[]} ) {
 
       })}
 
-      <button className='bg-prime text-white p-1 px-4 rounded-lg my-2' onClick={nextQuestion} >{currentQuestion===questions.length-1?"Show Score":"Next"}</button>
+      <button className='bg-prime text-white p-1 px-4 rounded-lg my-2 w-full ' onClick={nextQuestion} >{currentQuestion===questions.length-1?"Show Score":"Next"}</button>
     </div>
 }
 

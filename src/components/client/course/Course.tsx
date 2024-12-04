@@ -5,14 +5,33 @@ import Image from 'next/image';
 import SessionsList from '../session/SessionsList';
 import Enrolled from './Enrolled';
 import JoinBox from './JoinBox';
+import { groups } from '@/data';
+import { useDispatch } from 'react-redux';
+import {setCourseSessionsClear ,setCourseSessions} from "@/state/courseSessions/courseSession"
+
+
+
+
+
 export default function CourseFound(params: { course: course }) {
   const course = params.course;
-  const sessions = course.sessions
+  const courseGroups = groups.filter(group=> course.groupsId.includes(group.id));
+  console.log("courseGroups", courseGroups);
   const isEnrolled = false;
   const [enrolled, setEnrolled] = useState(false);
+  const CourseSessions = courseGroups.map(g=>g.sessions).flat(1);
+
+  // add sessions to global state 
+ const dispatch = useDispatch();
+
+
+
 
   useEffect(() => {
     setEnrolled(isEnrolled);
+    dispatch(setCourseSessionsClear())
+    dispatch(setCourseSessions(CourseSessions))
+
   }, [])
 
   return (
@@ -71,7 +90,7 @@ export default function CourseFound(params: { course: course }) {
 
 
 
-          <div className=' w-[49%] h-[200px] lg:hidden'>
+          <div className=' w-[100%] h-[200px] lg:hidden'>
             {enrolled ? <Enrolled /> : <JoinBox course={course} />}
           </div>
 
@@ -84,18 +103,25 @@ export default function CourseFound(params: { course: course }) {
             <p className='hh3 font-bold font-cairo'>عن الدوره</p>
             <p className='hh3 font-cairo text-right block w-full'>{course.description}</p>
           </div>
+
+          
           {/* course Sessions */}
-          <div dir='rtl' className='sessions w-full  rounded-[5px]  '>
-            <p className='hh3 font-bold mb-4 font-cairo w-full text-prime '>المحتوي</p>
-            <SessionsList sessions={sessions} />
-          </div>
+          {
 
+            courseGroups.map( (group)=>{
+            return < div key={group.id} dir='rtl' className='sessions w-full  rounded-[5px]  '>
+            <p className='hh3 font-bold mb-4 font-cairo w-full text-prime '>{group.title}</p>
+            <SessionsList sessions={group.sessions} /></div>
+          })
 
-        </div>
-
+          }
 
 
       </div>
+
+
+
+    </div >
 
 
 

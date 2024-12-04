@@ -1,7 +1,8 @@
+type quesitonRole =  "practice" | "quizz" | "both" ;
 
 export type question = {
   
- 
+ id:string;
   questionText:string;
   image?:string;
   answers:{
@@ -9,15 +10,31 @@ export type question = {
     image?:string;
   }[];
   correctAnswer:number;
+  role:quesitonRole;
 
 }
 
+export type quizz ={
+ 
+  id:string;
+  time:number;
+  numberOfQuestions:number;
+  MCQId: string[]
+
+}
+
+export type group ={
+  id:string;
+  title:string,
+  sessions :string[];
+}
 
 export type session={
   id:string;
   title:string;
   url:string;
-  MCQ:question[]
+  MCQId:string[];
+  quizzId?:string;
 };
 
 export type course = {
@@ -27,9 +44,11 @@ export type course = {
   price:string;
   image:string;
   numberOfstudents:number;
-  sessions:session[];
-  students:string[];
+  groupsId:string[];
+  studentsId:string[];
 }
+
+
  type acadmicYaers= "4th Grade"|"5th Grade"|"6th Grade"
 export type student = {
 

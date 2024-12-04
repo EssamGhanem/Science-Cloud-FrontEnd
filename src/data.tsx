@@ -1,4 +1,5 @@
-import { course } from "./components/types";
+
+import { course, group, quizz, session,question} from "./components/types";
 import { student } from "./components/types";
 import { request } from "./components/types";
 
@@ -77,13 +78,194 @@ export const students: student[] = [
 
 ]
 
-// export type request = {
-//   id:string;
-//   studentId: string ;
-//   courseId:string ;
-//   state: reqState;
-//   img:string;
-// }
+
+
+export const questions : question[] =[
+    {
+      id:"1",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+
+    {
+      id:"2",
+      questionText:" ما هي أعلى قمة في العالم",
+      answers:[{text:"قمة افرست"},{text:"قمة الهمالايا"},{text:"قمة عسير"}],
+      correctAnswer:3,
+      role:"both"
+    },
+
+    {
+      id:"3",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+
+    {
+      id:"4",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+
+    {
+      id:"5",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+    {
+      id:"6",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+    {
+      id:"7",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+    {
+      id:"8",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+    {
+      id:"9",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+    {
+      id:"10",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"both"
+    },
+    {
+      id:"11",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"quizz"
+    },
+    {
+      id:"12",
+      questionText:"ما هي عاصمة فرنسا؟",
+      answers:[{text:"القاهرة"},{text:"موسكو"},{text:"لندن"},{text:"باريس"}],
+      correctAnswer:4,
+      role:"quizz"
+    },
+
+]
+
+
+
+
+
+export const quizzes:quizz[] = [
+  {
+    id:"1",
+    time:10,
+    numberOfQuestions:2,
+    MCQId:["1","2","3","4","5"]
+  }
+]
+
+export const sessions:session[] =[
+
+  {
+    id:"1",
+    title:"الصف الرابع الدرس الأول",
+    url:"https://www.youtube.com/embed/4gwjScNk1JY?si=tMNyebOYHZm0dVxF",
+    MCQId:["1","2","3","4"],
+    quizzId:"1"
+  },
+  {
+    id:"2",
+    title:"الصف الرابع الدرس الثاني",
+    url:"https://www.youtube.com/embed/hpinjS4vIeY?si=M-XRiLLWMcdrRpzy",
+    MCQId:["5","6","7"]
+  },
+  {
+    id:"3",
+    title:"الصف الرابع الدرس الثالث",
+    url:"https://www.youtube.com/embed/vOZbh6zXh50?si=rh_tRO3mVSBDdZYt",
+    MCQId:["8","9","10","11","12"]
+  },
+  {
+    id:"4",
+    title:"الصف الرابع الدرس الرابع",
+    url:"https://www.youtube.com/embed/vOZbh6zXh50?si=rh_tRO3mVSBDdZYt",
+    MCQId:["8","9","10","11","12"]
+  }
+]
+
+
+
+export const groups : group[] = [
+  
+  {
+    id:"1",
+    title:"Unite[1]-concept[1]",
+    sessions:["1","2"]
+
+  },
+  {
+    id:"2",
+    title:"Unite[1]-concept[2]",
+    sessions:["3"]
+
+  },
+  {
+    id:"3",
+    title:"Unite[2]-concept[1]",
+    sessions:["4"]
+
+  }
+]
+
+
+
+
+export const courses : course[] =[
+
+  {
+    id: "1",
+    title: "الصف الرابع الترم الاول",
+    description: " كورس كامل متكامل شرح العلوم بتفصيل التفاصيل مع الاستاذه: أماني محمود غانم",
+    price: "500",
+    image: "/coursesImg/Grade-4.png",
+    numberOfstudents: 20,
+    groupsId:["1","2","3"],
+    studentsId:["4","2","3"]
+  }
+,
+  {
+    id: "2",
+    title: "الصف الخامس الترم الاول",
+    description: " كورس كامل متكامل شرح العلوم بتفصيل التفاصيل مع الاستاذه: أماني محمود غانم",
+    price: "400",
+    image: "/coursesImg/Grade-4.png",
+    numberOfstudents: 20,
+    groupsId:["1","5","6"],
+    studentsId:["1","2","3"]
+  }
+
+]
 
 
 
@@ -125,462 +307,3 @@ export  const requests :request[] = [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const courses: course[] = [
-  {
-    id: "1",
-    title: "الصف الرابع الترم الاول",
-    description: " كورس كامل متكامل شرح العلوم بتفصيل التفاصيل مع الاستاذه: أماني محمود غانم",
-    price: "500",
-    image: "/coursesImg/Grade-4.png",
-    numberOfstudents: 20,
-    sessions: [
-      {
-        id: "1",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: "what is your fav color ???? what is the sun ??",
-            answers: [
-              {
-                text: "red"
-              },
-              {
-                text: "green"
-              },
-              {
-                text: "white"
-              },
-              {
-                text: "black"
-              }
-            ],
-            correctAnswer: 3
-          }, {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }, {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }, {
-        id: "2",
-        title: "session 2",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 1
-          }, {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }, {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      },
-      {
-        id: "3",
-        title: "session 3",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      },
-      {
-        id: "4",
-        title: "session 4",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      },
-    ],
-    students:["1","2","3"]
-  },
-
-  {
-    id: "2",
-    title: "الصف الرابع الترم الثاني",
-    description: "   متكامل شرح العلوم بتفصيل التفاصيل  مع الاستاذه: أماني محمود غانم",
-    price: "600",
-    image: "/coursesImg/Grade-4.png",
-    numberOfstudents: 30,
-    sessions: [
-      {
-        id: "1",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }, {
-        id: "2",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      },
-      {
-        id: "3",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }
-    ],
-    students:["4","2","3"]
-  }
-  ,
-  {
-    id: "3",
-    title: "الصف الخامس الترم الاول",
-    description: " كورس كامل متكامل شرح العلوم بتفصيل التفاصيل مع الاستاذه: أماني محمود غانم",
-    price: "700",
-    image: "/coursesImg/Grade-4.png",
-    numberOfstudents: 44,
-    sessions: [
-      {
-        id: "1",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }, {
-        id: "2",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      },
-      {
-        id: "3",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }
-    ],
-    students:["2","5","3"]
-
-  },
-
-  {
-    id: "4",
-    title: "الصف الخامس الترم الاول",
-    description: " كورس كامل متكامل شرح العلوم بتفصيل التفاصيل مع الاستاذه: أماني محمود غانم",
-    price: "900",
-    image: "/coursesImg/Grade-4.png",
-    numberOfstudents: 120,
-    sessions: [
-      {
-        id: "1",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }, {
-        id: "2",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      },
-      {
-        id: "3",
-        title: "session 1",
-        url: "https://www.youtube.com/embed/DJrcRAELDNU?si=7NQfG63RNX-m0aKq",
-        MCQ: [
-          {
-            questionText: " ما هي اكبر دوله في العالم من حيث المساحه ",
-            answers: [
-              {
-                text: "الصين"
-              },
-              {
-                text: "روسيا"
-              },
-              {
-                text: "المغرب"
-              },
-              {
-                text: "البرازيل"
-              }
-            ],
-            correctAnswer: 2
-          }
-        ]
-      }
-    ],
-    students:["4","2","3"]
-
-  }
-
-
-]

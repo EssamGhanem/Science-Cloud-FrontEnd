@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         greens:"#556B2F",
         prime:"#161D6F",
+        // prime:"#00afcb",
         secondary:"#0B2F9F",
         therd:"#98DED9",
         fourth:"#C7FFD8"

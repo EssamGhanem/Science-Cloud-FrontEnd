@@ -7,6 +7,7 @@ import { IoIosHome } from "react-icons/io";
 import { ImProfile } from "react-icons/im";
 import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
 import { IoMdAddCircle } from "react-icons/io";
+import { MdMarkEmailUnread } from "react-icons/md";
 
 const Links = [
 
@@ -35,6 +36,12 @@ const Links = [
     lable: "Create Courses",
     href: "/dashboard/create-course",
     icon: <IoMdAddCircle />
+  },
+  
+  {
+    lable: "Emails",
+    href: "/dashboard/users-emails",
+    icon: <MdMarkEmailUnread />
   },
 
 ]

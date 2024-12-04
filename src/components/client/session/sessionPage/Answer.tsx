@@ -29,7 +29,7 @@ export default function Answer(params:{ans:{text?:string,img?:string},idx:number
   return (
    
    
-   <div className={'w-full p-1 mb-4 rounded-lg px-4 border-2 border-black/30 duration-200 cursor-pointer '+bg }>
+   <div className={'w-full p-1 mb-4 rounded-lg px-4 hover:bg-prime/30 border-2 border-black/30 duration-200 cursor-pointer '+bg }>
       {answer.img!=undefined? <Image src={answer.img} width='200' height='200' alt='img' />  :<></>}
       {answer.text!=undefined? <p> {answer.text}</p>:<></>}
 
