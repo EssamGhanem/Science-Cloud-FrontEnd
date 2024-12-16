@@ -192,26 +192,41 @@ export const sessions:session[] =[
     title:"الصف الرابع الدرس الأول",
     url:"https://www.youtube.com/embed/4gwjScNk1JY?si=tMNyebOYHZm0dVxF",
     MCQId:["1","2","3","4"],
-    quizzId:"1"
+    quizzId:"1",
+    courseId:"1"
   },
   {
     id:"2",
     title:"الصف الرابع الدرس الثاني",
     url:"https://www.youtube.com/embed/hpinjS4vIeY?si=M-XRiLLWMcdrRpzy",
-    MCQId:["5","6","7"]
+    MCQId:["5","6","7"],
+     courseId:"1"
   },
   {
     id:"3",
     title:"الصف الرابع الدرس الثالث",
     url:"https://www.youtube.com/embed/vOZbh6zXh50?si=rh_tRO3mVSBDdZYt",
-    MCQId:["8","9","10","11","12"]
+    MCQId:["8","9","10","11","12"],
+     courseId:"1"
   },
   {
     id:"4",
-    title:"الصف الرابع الدرس الرابع",
+    title:"الصف الخامس الدرس الاول",
     url:"https://www.youtube.com/embed/vOZbh6zXh50?si=rh_tRO3mVSBDdZYt",
-    MCQId:["8","9","10","11","12"]
+    MCQId:["8","9","10","11","12"],
+     courseId:"2"
+
+  },
+  {
+    id:"5",
+    title:"الصف الخامس الدرس الثاني",
+    url:"https://www.youtube.com/embed/vOZbh6zXh50?si=rh_tRO3mVSBDdZYt",
+    MCQId:["8","9","10","11","12"],
+     courseId:"2"
+
   }
+  
+  
 ]
 
 
@@ -232,8 +247,8 @@ export const groups : group[] = [
   },
   {
     id:"3",
-    title:"Unite[2]-concept[1]",
-    sessions:["4"]
+    title:"Unite[1]-concept[1]",
+    sessions:["4","5"]
 
   }
 ]
@@ -250,7 +265,7 @@ export const courses : course[] =[
     price: "500",
     image: "/coursesImg/Grade-4.png",
     numberOfstudents: 20,
-    groupsId:["1","2","3"],
+    groupsId:["1","2"],
     studentsId:["4","2","3"]
   }
 ,
@@ -261,8 +276,8 @@ export const courses : course[] =[
     price: "400",
     image: "/coursesImg/Grade-4.png",
     numberOfstudents: 20,
-    groupsId:["1","5","6"],
-    studentsId:["1","2","3"]
+    groupsId:["3"],
+    studentsId:["3"]
   }
 
 ]

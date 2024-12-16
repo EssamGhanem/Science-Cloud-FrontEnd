@@ -35,6 +35,7 @@ export type session={
   url:string;
   MCQId:string[];
   quizzId?:string;
+  courseId:string;
 };
 
 export type course = {

@@ -2,7 +2,8 @@ import React from 'react'
 import SessionsList from '../SessionsList'
 import { session } from '@/components/types'
 
-export default function SessionSidebar(params:{sessions:session[]}) {
+
+export default function SessionSidebar(params:{sessions: session[]}) {
   
   const sessions = params.sessions
   return (

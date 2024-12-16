@@ -2,10 +2,11 @@ import React from 'react'
 import Link from 'next/link';
 import { setQuestionEnd } from '@/state/question/QuesionStart';
 import { useDispatch } from 'react-redux'
-export default function NextBackButtons(params:{indexOfCurrentSession:number,courseSessionsId:string[]}) {
+export default function NextBackButtons(params:{currentSessionId:string,courseSessionsId:string[]}) {
   
-  const indexOfCurrentSession = params.indexOfCurrentSession;
   const courseSessionsId = params.courseSessionsId;
+  const indexOfCurrentSession = courseSessionsId.findIndex((sessionid)=>sessionid===params.currentSessionId)
+  
 
   const nextSessionId =  indexOfCurrentSession === courseSessionsId.length -1 ? -1 : courseSessionsId[indexOfCurrentSession+1]
   const backSessionId = indexOfCurrentSession === 0 ? -1 : courseSessionsId[indexOfCurrentSession -1];
