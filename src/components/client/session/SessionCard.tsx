@@ -11,7 +11,7 @@ export default function SessionCard(params:{session:session}) {
   const session = params.session;
 
   return (
-    <Link href={'/sessions/'+session.id} >
+    <Link href={'/sessions/'+session._id} >
     
    
     <div dir='rtl' className=' p-2 rounded-md bg-gradient-to-t from-prime/60 to-prime/30 px-5 mb-4 flex justify-between 

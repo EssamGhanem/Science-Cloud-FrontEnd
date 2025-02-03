@@ -5,7 +5,6 @@ export default function createCourses() {
   return (
 
     <>
-      <div>CreateCourses</div>
       <AddCourseForm/>
       
     </>

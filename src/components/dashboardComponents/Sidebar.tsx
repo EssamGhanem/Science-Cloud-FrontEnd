@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ImBooks } from "react-icons/im";
 import { IoIosHome } from "react-icons/io";
 import { ImProfile } from "react-icons/im";
-import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
+
 import { IoMdAddCircle } from "react-icons/io";
 import { MdMarkEmailUnread } from "react-icons/md";
 
@@ -20,11 +20,6 @@ const Links = [
     lable: "courses",
     href: "/dashboard/courses",
     icon: <ImBooks />
-  },
-  {
-    lable: "requests",
-    href: "/dashboard/requests",
-    icon: <VscGitPullRequestGoToChanges />
   },
   {
     lable: "students",

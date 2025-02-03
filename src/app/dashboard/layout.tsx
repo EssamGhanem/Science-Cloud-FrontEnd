@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import NavBar from "@/components/dashboardComponents/NavBar";
 import Sidebar from "@/components/dashboardComponents/Sidebar";
 import { Provider } from "react-redux";
@@ -20,8 +20,9 @@ export default function RootLayout({
           <Sidebar />
         </div>
         <div className="right   w-[80%]">
+        <Provider store={store}>
           <NavBar />
-          <Provider store={store}>
+          
             {children}
           </Provider>
         </div>

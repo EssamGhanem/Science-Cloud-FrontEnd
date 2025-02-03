@@ -8,6 +8,7 @@ import selectedAnsReducer from '@/state/question/selectedAns';
 import currentQuestionReducer from '@/state/question/currentQuestion';
 import showAnsReducer from '@/state/question/showAns';
 import resultReducer from '@/state/question/result';
+import userAuthentication from '@/state/userState/authenticate'
 export const store = configureStore({
   reducer:{
     
@@ -18,6 +19,7 @@ export const store = configureStore({
     setShowAns:showAnsReducer,
     result:resultReducer,
     courseSessions:courseSessionReducer,
+    userAuthentication:userAuthentication
   }
 })
 

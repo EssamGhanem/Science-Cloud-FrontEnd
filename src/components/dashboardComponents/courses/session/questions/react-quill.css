@@ -1,0 +1,68 @@
+
+
+.ql-toolbar {
+
+  transition: opacity 0.4s ease-in-out;  /* Smooth transition */
+}
+
+.ql-container:focus + .ql-toolbar {
+  @apply !bg-red-400;
+}
+
+ .ql-toolbar {
+  @apply   !text-[20px] ;
+}
+
+.ql-container:focus .ql-toolbar {
+  @apply  block;
+  
+}
+
+.ql-editor {
+  @apply !text-[16px]
+}
+
+
+
+
+
+
+
+
+
+.num-input::-webkit-inner-spin-button,
+.num-input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  
+}
+
+
+.question-role-select__option--is-focused {
+  @apply !bg-prime/70 !text-white;
+}
+
+.question-role-select__control{
+  @apply !border-none;
+}
+
+
+
+.question-role-select__control--is-focused {
+  @apply !outline-none !border-none  !ring-0 ;
+}
+
+.question-role-select__control--menu-is-open {
+  @apply  !rounded-none !outline-none !border-none;
+}
+
+.question-role-select__value-container{
+  @apply !text-prime !outline-none !border-none ;
+}
+
+.question-role-select__value-container-is-focused{
+  @apply !text-prime !outline-none !border-none ;
+}
+
+.question-role-select__option--is-selected{
+  @apply !bg-prime;
+}

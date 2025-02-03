@@ -3,7 +3,10 @@ import React from 'react'
 import ReactPlayer from 'react-player/youtube'
 import { useState, useEffect } from 'react';
 import Question from './question/Question';
-import { session } from '@/components/types';
+import { session  } from '@/components/types';
+
+
+
 export default function Session(params:{session:session}) {
   
 
@@ -14,6 +17,8 @@ export default function Session(params:{session:session}) {
   }, [])
 
   const session = params.session
+
+  
   
   return (
 
@@ -26,17 +31,17 @@ export default function Session(params:{session:session}) {
         
         {
 
-            isClient?<ReactPlayer url={session.url} width='100%' height='100%' controls/>:""  
+            isClient?<ReactPlayer url={session.videoLink} width='100%' height='100%' controls/>:""  
         }
       </div>
       <h2  className='md:text-[22px] font-cairo font-bold mb-2 border-b-2 border-black w-fit'>
         الأسئله:
       </h2>
       <div className='questions '>
-        {session.MCQ?.map((q,idx)=>{
-          return <div key = {idx}>
+        {session.questions?.map((q,idx)=>{
+          return <div key = {q._id}>
             <span className='text-[22px] font-bold'>Q {idx+1}</span>
-            <Question    question={q}  />
+            <Question    question = {q}  />
           </div>
         })}
       </div>

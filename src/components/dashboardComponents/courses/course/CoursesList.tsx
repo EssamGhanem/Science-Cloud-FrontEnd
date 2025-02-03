@@ -2,15 +2,13 @@
 
 import React from 'react'
 import CourseCard from './CourseCard';
-import { useSelector } from 'react-redux'
-import { RootState } from '@/app/store/store';
+
+import { course } from '@/components/types';
 
 
-export default function CoursesList() {
-  
-  const courses = useSelector((state:RootState)=>{
-    return state.courses.value;
-  })
+export default function CoursesList(params:{courses:course[]}) {
+  const  courses = params.courses;
+
 
   
   return (
@@ -22,7 +20,7 @@ export default function CoursesList() {
          </div>
         <div className='courses'>
             {courses.map((course)=>{
-              return <CourseCard course={course} key={course.id}/>
+              return <CourseCard course={course} key={course._id}/>
             })}
         </div>
     </div>

@@ -4,6 +4,10 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login } from '@/state/userState/authenticate';
 
 
 const governorates = [
@@ -36,12 +40,14 @@ const governorates = [
 
 ];
 
-const acadmicYaers= ["4th Grade","5th Grade","6th Grade"];
+const acadmicYaers= ["4th-Grade","5th-Grade","6th-Grade"];
 
 const schema = z.object({
 
   name: z.string().min(10, "اقل عدد من الحروف 10"),
   email: z.string().email("خطاء في الإيميل"),
+  phoneNumber:z.string().min(11,"رقم الهاتف غير صالح").max(11,"رقم الهاتف غير صالح"),
+  parentsPhoneNumber:z.string().min(11,"رقم الهاتف غير صالح").max(11,"رقم الهاتف غير صالح"),
   acadmicYaer:z.string().min(3,"السنه الدراسيه مطلوبه"),
   schoolName: z.string().min(3, "قل عدد من الحروف 3"),
   governorate: z.string().min(3, "اقل عدد من الحروف 3"),
@@ -64,11 +70,46 @@ export default function SignUP() {
     resolver: zodResolver(schema)
   });
 
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const formSubmit: SubmitHandler<Inputs> = async (data) => {
 
-
-  const formSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(errors);
     console.log(data)
+
+    try {
+
+
+      const response = await axios.post(
+        'http://localhost:5000/api/auth/register',
+        {
+          "fullName": data.name,
+          "email": data.email,
+          "password": data.password,
+          "phoneNumber": data.phoneNumber,
+          "parentsPhoneNumber": data.parentsPhoneNumber,
+          "photo":"/userDefaultImg.jpg",
+          "AcadmicYear": data.acadmicYaer,
+          "governorate": data.governorate,
+          "city": data.city,
+          "role":"student"
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      console.log(response.data);
+      
+             dispatch(login({user:response.data.user}));
+      router.push('/');
+
+
+
+    }
+    catch (e) {
+      console.log(e);
+      
+    }
 
 
   }
@@ -94,6 +135,15 @@ export default function SignUP() {
             <div className=' mb-1 w-[100%]'>
               <input  {...register("email")} className='w-[100%]  font-cairo text-prime p-1 px-2 flex items-center border-prime/40 border-2 outline-none  ' placeholder=' email ' />
               {errors.email && <div className='text-red-600 px-2 font-cairo text-sm '> {errors.email.message} </div>}
+            </div>
+
+            <div className=' mb-1 w-[100%]'>
+              <input  {...register("phoneNumber")} className='w-[100%]  font-cairo text-prime p-1 px-2 flex items-center border-prime/40 border-2 outline-none  ' placeholder=' phone number ' />
+              {errors.phoneNumber && <div className='text-red-600 px-2 font-cairo text-sm '> {errors.phoneNumber.message} </div>}
+            </div>
+            <div className=' mb-1 w-[100%]'>
+              <input  {...register("parentsPhoneNumber")} className='w-[100%]  font-cairo text-prime p-1 px-2 flex items-center border-prime/40 border-2 outline-none  ' placeholder=' Parents Phone Number ' />
+              {errors.parentsPhoneNumber && <div className='text-red-600 px-2 font-cairo text-sm '> {errors.parentsPhoneNumber.message} </div>}
             </div>
             
             {/* acadmicYaer */}

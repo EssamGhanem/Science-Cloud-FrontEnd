@@ -1,13 +1,27 @@
-
-import { courses } from '@/data'
 import React from 'react'
 import HomeCourseCard from './HomeCourseCard';
+// import axios from 'axios';
+import { course } from '@/components/types';
+
+// const getCourses = async ()=>{
+
+//   try{
+//     const res = await axios.get('http://localhost:5000/api/courses');
+//     const courses = res.data.courses;
+//     return courses;
+//   }catch(e){
+//     console.log(e);
+//     return [];
+//   }
+
+// }
 
 
-export default function CoursesSecion() {
+export default  function CoursesSecion() {
 
 
-  const lastCourses = courses.slice(courses.length - 4, courses.length - 1)
+  const lastCourses:course[] = [];
+  
 
   return (
 
@@ -20,8 +34,8 @@ export default function CoursesSecion() {
 
       <div className=' w-full h-full flex justify-around items-start pb-8 flex-wrap'>
         {
-          lastCourses.map((course) => {
-            return <HomeCourseCard course={course} key={course.id} />;
+          lastCourses.map(( course) => {
+            return <HomeCourseCard course={course} key={course._id} />;
           })
         }
 

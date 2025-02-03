@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -7,6 +7,9 @@ import { z } from 'zod';
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import { login } from '@/state/userState/authenticate';
+
 const schema = z.object({
 
   email: z.string().email("خطء في الإيميل"),
@@ -22,6 +25,7 @@ type Inputs = z.infer<typeof schema>
 export default function Login() {
 
   const router = useRouter();
+  const dispatch = useDispatch();
   const [userNotFound, setUserNotFound] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
@@ -31,7 +35,7 @@ export default function Login() {
 
   const formSubmit: SubmitHandler<Inputs> = async (data) => {
 
-    console.log(data)
+   
 
     try {
 
@@ -46,8 +50,10 @@ export default function Login() {
           withCredentials: true,
         }
       );
+      console.log(response.data.user)
 
-      console.log(response.data);
+       dispatch(login({user:response.data.user}));
+
       router.push('/');
 
 
@@ -60,14 +66,6 @@ export default function Login() {
 
 
   }
-
-
-
-
-
-
-
-
 
 
 

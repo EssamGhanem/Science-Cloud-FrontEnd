@@ -36,7 +36,7 @@ export default function Footer() {
 
       {/* copy rights */}
       <div>
-        <p className='text-gray-400 pb-8'>Developed by <span className='font-bold underline'>EssamGhanem</span> <br/> | science-cloud&copy;2024</p>
+        <p className='text-gray-400 pb-8'>Developed by <span className='font-bold underline'>EssamGhanem</span> <br/> | science-cloud&copy;2025</p>
 
 
       </div>

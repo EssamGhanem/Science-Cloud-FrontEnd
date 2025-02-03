@@ -1,7 +1,15 @@
+
+import UserPage from '@/components/client/userPage/UserPage'
 import React from 'react'
 
-export default function page() {
+
+export default async function page() {
+  // const user: user = await getUser();
   return (
-    <h1>My profile page</h1>
+    <>
+    
+    <UserPage />
+    
+    </>
   )
 }

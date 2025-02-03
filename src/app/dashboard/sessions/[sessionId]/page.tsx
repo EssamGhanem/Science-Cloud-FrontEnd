@@ -1,18 +1,39 @@
-'use client';
-import Session from '@/components/dashboardComponents/courses/session/Session'
+
+
+import SessionPage from '@/components/dashboardComponents/courses/session/SessionPage'
+
+import axios from 'axios';
 import React from 'react'
-import { sessions } from '@/data';
 
-export default function page({ params }:
+async function getSession(id: string) {
 
-  { params: { sessionId: string } }
-) {
-    const session = sessions.find((session)=>session.id === params.sessionId)
-  return (
+  try{
+   const res = await axios.get(`http://localhost:5000/api/sessions/`+id);
+   return res.data;
+
+  }catch(e){
+   console.log("error in fetching");
+  }
+ 
+ }
+ 
+
+
+export default async function page({ params }:{ params: { sessionId: string } }){
+
+
+  const data = await getSession(params.sessionId);
+  const session = data.session;
+  const questions = data.questions
+  
+  
+
+  
+    return (
     <>
-      <div dir='rtl' className='p-container pt-[40px] '>
+      <div  className=' pt-[40px] '>
         
-        {session? <Session session = {session} /> :<></>}
+        {session? <SessionPage session = {session }  questions={questions}/> :<></>}
 
       </div>
     </>

@@ -6,6 +6,9 @@ import { course } from '@/components/types';
 
 
 export default function CourseList(params: { courses: course[] }) {
+
+
+
   const coursesList = params.courses;
   const [searchText, setSearchText] = useState("")
   const [courseNotFound ,  setCourseNotFound] =useState(false);
@@ -32,7 +35,7 @@ export default function CourseList(params: { courses: course[] }) {
       <div className=' w-full h-full min-h-[50vh] flex justify-around items-start pb-8 flex-wrap  '>
         {
                 coursesToShow.map((course) => {
-          return <CourseCard course={course} key={course.id} />
+          return <CourseCard course={course} key={course._id} />
         })}
         
         {

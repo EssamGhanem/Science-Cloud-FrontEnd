@@ -3,9 +3,18 @@ import '@/app/globals.css';
 import { TiThMenu } from "react-icons/ti";
 import { GrClose } from "react-icons/gr";
 import Link from 'next/link'
-import { usePathname } from 'next/navigation';
-import React, { useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { ImSpinner7 } from "react-icons/im";
+import Image from 'next/image';
+import { IoLogOutOutline } from "react-icons/io5";
+import { login, logout } from '@/state/userState/authenticate';
+import api from '@/utils/api';
+import { RootState } from '@/app/store/store';
+
+// import api from '@/utils/api';
 
 const pages = [
   {
@@ -25,17 +34,39 @@ const pages = [
     label: "صفحتي"
   },
   {
-    href: "/dashboard",
+    href: "/dashboard/courses",
     label: "Dashboard"
   }
 
 ]
 
 
-export default function NavBar() {
+
+
+
+
+const NavBar = () => {
 
   const pathname = usePathname();
+  const [loding, setLoding] = useState(true)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const { user } = useSelector((state: RootState) => state.userAuthentication)
+
+
+
+
+  const Logout = async () => {
+
+    api.get('http://localhost:5000/api/auth/logout', {
+      withCredentials: true
+
+    },)
+    dispatch(logout());
+    router.refresh();
+  }
 
   const openClose = () => {
     if (menuIsOpen) {
@@ -47,7 +78,33 @@ export default function NavBar() {
 
 
   }
- 
+
+  const getUser = async () => {
+    try {
+      const res = await api.post('http://localhost:5000/api/auth/refresh-token', {},{ withCredentials: true });
+      dispatch(login({ user: res.data.user, accessToken: res.data.accessToken }))
+      setLoding(false);
+      return res.data;
+    }
+    catch (e) {
+      console.log(e);
+      setLoding(false);
+      return null;
+    }
+
+  }
+
+
+
+  useEffect(() => {
+
+    getUser()
+  
+  }, [])
+
+
+
+
   return (
     <>
 
@@ -61,14 +118,14 @@ export default function NavBar() {
           </Link>
 
         </div>
-        
-        
+
+
         <div className='pages items-center hidden lg:flex 
         flex-row-reverse gap-4   justify-around w-fit '>
           {
             pages.map(ele => {
               const isActive = pathname == ele.href ? "isActive" : "";
-              return <Link href={ele.href} key={ele.label} className={ " p-2 lg:w-[100px]  w-fit text-center  "} >
+              return <Link href={ele.href} key={ele.label} className={" p-2 lg:w-[100px]  w-fit text-center  "} >
 
                 <span className={isActive + ' transform hover:scale-125 transition duration-300 p-1  hover:bg-red-0  font-cairo lg:text-[18px]  text-[16px] inline-block'} >{ele.label}  </span>
               </Link>
@@ -78,11 +135,21 @@ export default function NavBar() {
           }
         </div>
 
+        {
+          loding ? <p className='text-prime text-[32px] animate-spin text-center  duration-500 flex justify-center '><ImSpinner7 /></p>
+            : user ? <div className=' flex items-center w-fit'><Image src={user.photo} alt='img' height={50} width={50} />
+              <p className=' text-[22px]  font-kanit text-secondary'>{user.fullName}</p>
+              <IoLogOutOutline className=' text-[22px] pl-[10px] w-[30px] duration-300 hover:scale-125 text-red-500  cursor-pointer' onClick={() => Logout()} />
+            </div>
+              :
+              <div className='auth lg:text-[16px] text-[12px]  flex-row-reverse justify-center gap-4 w-[30%] text-center hidden md:flex'>
+                <Link href={'/login'} className=' font-cairo font-bold border-2 border-prime px-3 py-1 text-prime'>تسجيل الدخول</Link>
+                <Link href={'/register'} className=' font-cairo font-bold border-prime border-2 bg-prime px-3 py-1 text-white '> انشاء حساب</Link>
+              </div>
 
-        <div className='auth lg:text-[16px] text-[12px]  flex-row-reverse justify-center gap-4 w-[30%] text-center hidden md:flex'>
-          <Link href={'/login'} className=' font-cairo font-bold border-2 border-prime px-3 py-1 text-prime'>تسجيل الدخول</Link>
-          <Link href={'/register'} className=' font-cairo font-bold border-prime border-2 bg-prime px-3 py-1 text-white '> انشاء حساب</Link>
-        </div>
+        }
+
+
 
         <button className='hover:scale-125 duration-300 lg:hidden' onClick={() => openClose()} >
           <TiThMenu className='w-20 h-7 ' />
@@ -91,7 +158,7 @@ export default function NavBar() {
 
       </nav>
 
-          {/* sidebar  */}
+      {/* sidebar  */}
       <div onClick={() => openClose()} className={clsx("w-full h-full z-20 bg-black/50 fixed top-0 translate-x-[-105%] duration-200 ", menuIsOpen && "translate-x-[0%] ")}>
         <div className={clsx('sidebar w-[250px]  md:w-[350px] h-full bg-white hid p-5 duration-500 translate-x-[-105%]  ', menuIsOpen && "translate-x-[0%] ")}>
           <div className='text-right'>
@@ -121,4 +188,14 @@ export default function NavBar() {
 
     </>
   )
+
 }
+
+
+
+
+
+
+
+
+export default NavBar;

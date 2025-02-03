@@ -1,79 +1,108 @@
-type quesitonRole =  "practice" | "quizz" | "both" ;
-
-export type question = {
+type quesitonRole = "practice" | "quizz" | "both";
+export type admin = {
+  _id: string;
+  fullName: string;
+  email: string;
+  password: string;
+  role: "admin";
+}
+export type user = {
+  _id: string;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  parentsPhoneNumber: string;
+  photo: string;
+  AcadmicYear: string;
+  governorate: string;
+  city: string;
+  courses: course[];
+  quizzes:(string|quizz) [];
+  correctQestions: (string|question)[] ;
+  wrongQestion: (string|question)[];
   
- id:string;
-  questionText:string;
-  image?:string;
-  answers:{
-    text?:string;
-    image?:string;
+  token: {
+    type: string;
+  },
+  role: "student" | 'admin';
+}
+export type question = {
+
+  _id: string;
+  questionText: string;
+  questionImg?: string;
+  answers: {
+    answerText?: string;
+    answerImg?: string;
   }[];
-  correctAnswer:number;
-  role:quesitonRole;
+  correctAns: number;
+  role: quesitonRole;
+  numberOfCorrectAnswers: number;
+  numberOfWrongAnswers: number;
 
 }
 
-export type quizz ={
- 
-  id:string;
-  time:number;
-  numberOfQuestions:number;
-  MCQId: string[]
+export type quizz = {
+  title: string;
+  _id: string;
+  duration: number;
+  numberOfQuestions: number;
+  questions: question[]
 
 }
 
-export type group ={
-  id:string;
-  title:string,
-  sessions :string[];
+export type section = {
+  _id: string;
+  title: string,
+  sessions: session[];
+  course: course;
 }
 
-export type session={
-  id:string;
-  title:string;
-  url:string;
-  MCQId:string[];
-  quizzId?:string;
-  courseId:string;
+export type session = {
+  _id: string;
+  title: string;
+  videoLink: string;
+  questions: question[];
+  quizz?: quizz;
+  course: course;
 };
 
 export type course = {
-  id:string;
-  title:string;
-  description:string;
-  price:string;
-  image:string;
-  numberOfstudents:number;
-  groupsId:string[];
-  studentsId:string[];
+  _id: string;
+  title: string;
+  description: string;
+  price: string;
+  image: string;
+  students: user[];
+  sections: section[];
+
 }
 
 
- type acadmicYaers= "4th Grade"|"5th Grade"|"6th Grade"
+type acadmicYaers = "4th Grade" | "5th Grade" | "6th Grade"
 export type student = {
 
-  id:string;
-  name:string ;
-  email:string;
-  password:string;
+  id: string;
+  name: string;
+  email: string;
+  password: string;
 
-  school:string;
-  academicYear:acadmicYaers;
-  governorate:string;
-  city:string;
+  school: string;
+  academicYear: acadmicYaers;
+  governorate: string;
+  city: string;
 
-  courses:string[];
+  courses: string[];
 
 }
 
 type reqState = "pending" | "accepted" | "rejected";
 export type request = {
-  id:string;
-  studentId: string ;
-  courseId:string ;
+  id: string;
+  studentId: string;
+  courseId: string;
   state: reqState;
-  img:string;
+  img: string;
 }
 
 

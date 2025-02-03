@@ -10,7 +10,7 @@ export default function HomeCourseCard(params: { course: course }) {
 
   return (
 
-    <Link href={"/courses/" + course.id} className='  flex flex-col w-[30%] max-lg:w-[40%] max-md:w-[45%] max-sm:w-[80%]  h-full p-2 bg-gradient-to-t outline-[1px] outline outline-transparent   hover:outline-prime shadow-xl duration-500 hover:from-prime/30 relative top-0 hover:top-[-20px] from-prime/20 to-white font-cairo mb-12 rounded-2xl '>
+    <Link href={"/courses/" + course._id} className='  flex flex-col w-[30%] max-lg:w-[40%] max-md:w-[45%] max-sm:w-[80%]  h-full p-2 bg-gradient-to-t outline-[1px] outline outline-transparent   hover:outline-prime shadow-xl duration-500 hover:from-prime/30 relative top-0 hover:top-[-20px] from-prime/20 to-white font-cairo mb-12 rounded-2xl '>
 
       
 

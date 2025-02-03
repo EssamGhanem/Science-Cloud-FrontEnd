@@ -1,18 +1,19 @@
 "use client";
 
-
-import { courses } from '@/data';
 import CourseNotFound from './CourseNotFound';
 import Course from './Course';
+import { course } from '@/components/types';
 
-export default function CoursePage(params: { courseId: string }) {
-  const findCourse =courses.find((course)=>course.id===params.courseId)
+export default function CoursePage(params: { course: course }) {
+
+  const course = params.course ;
+
   
 
   
   return (
 
-    findCourse == undefined? <CourseNotFound />:<Course course = {findCourse} />
+    course == undefined? <CourseNotFound />:<Course course = {course} />
 
   )
 }

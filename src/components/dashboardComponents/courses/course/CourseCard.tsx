@@ -6,13 +6,15 @@ export default function CourseCard(params : {course:course}) {
   
   const course = params.course;
 
+  const numberOfSessions= course.sections.map((sec)=>sec.sessions.length).reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+
   return (
-    <Link href={"./courses/"+course.id}>
+    <Link href={"./courses/"+course._id}>
     
-      <div className=' my-2 flex justify-between p-2 warp bg-black/20 hover:scale-110 duration-300'>
+      <div className='flex justify-between p-2 my-2 duration-300  warp bg-black/20 hover:scale-110'>
           <h3 className='hh3 w-[50%]'>{course.title}</h3>
-          <h3 className='hh3 w-[25%] text-center '>{course.sessions.length}</h3>
-          <h3 className='hh3 w-[25%] text-center '>{course.numberOfstudents}</h3>
+          <h3 className='hh3 w-[25%] text-center '>{numberOfSessions}</h3>
+          <h3 className='hh3 w-[25%] text-center '>{course.students.length}</h3>
           
            
       </div>

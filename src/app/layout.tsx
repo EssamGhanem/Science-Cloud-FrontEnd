@@ -1,8 +1,8 @@
 
 import type { Metadata } from "next";
-
+// import { Provider } from "react-redux";
+// import { store } from "./store/store";
 import "./globals.css";
-
 
 
 export const metadata: Metadata = {
@@ -12,7 +12,11 @@ export const metadata: Metadata = {
 
 };
 
-export default function RootLayout({
+
+
+
+
+export default  function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -20,21 +24,21 @@ export default function RootLayout({
 
 
 
-
   return (
     <html lang="ar"   >
       <head >
 
-     
-      <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
-      <link rel="icon" href='/favicon.ico' />
+
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link rel="icon" href='/favicon.ico' />
 
       </head>
-      <body className=" min-h-[100vh] overflow-x-hidden relative  " >
+      <body   >
 
-        {children}
 
-       
+          {children}
+
+
       </body>
 
 

@@ -123,27 +123,27 @@
 
 @layer components {
   .p-container {
-    @apply px-[12%] max-md:px-[10%] max-sm:px-[8%];
+    @apply px-[6%] max-md:px-[5%] max-sm:px-[3%];
   }
 
   .isActive {
-    @apply border-b-2 border-prime font-bold;
+    @apply font-bold border-b-2 border-prime;
   }
 
   .formCourseDiv {
-    @apply flex flex-col my-5 w-[100%] gap-1;
+    @apply flex flex-col my-2 w-[100%] gap-1;
   }
 
   .formCourseLabel {
-    @apply lg:text-[24px] text-[18px] text-white;
+    @apply   lg:text-[24px] text-[18px] font-bold ;
   }
 
   .formCourseInput {
-    @apply p-1 rounded-md px-3 focus-visible:outline outline-prime outline-[4px] font-cairo text-right text-[18px] md:text-[24px] text-black/70;
+    @apply p-1 border-2  border-prime rounded-lg px-3 focus-visible:outline outline-prime outline-[2px] font-cairo  text-[18px] md:text-[24px] text-black/70;
   }
 
   .isSelected {
-    @apply bg-prime text-white;
+    @apply text-white bg-prime;
   }
 
   .hh3 {
@@ -162,6 +162,71 @@
     @apply w-full h-[100vh] z-30 bg-black/80 flex justify-center items-center fixed top-0 left-0;
   }
 
+  .editButton{
+    @apply  w-full px-4 mx-2 text-blue-500 duration-200 border-2 border-blue-500 rounded-lg hover:bg-blue-500/30 font-kanit text-[18px] ;
+  }
+  .deleteButton{
+    @apply  w-full px-4 mx-2 text-red-500 duration-200 border-2 border-red-500 rounded-lg hover:bg-red-500/30  font-kanit text-[18px] ;
+  }
+
+  .custom-select__option--is-selected {
+    @apply text-white bg-red-500;
+  }
 
 
+
+
+}
+
+@layer components {
+
+  .ql-container {
+    @apply border border-blue-500 rounded-lg;
+  }
+  
+  /* Style the toolbar */
+  .ql-toolbar {
+    @apply  border-b border-blue-500 rounded-t-lg;
+  }
+  
+  /* Editor text customization */
+  .ql-editor {
+    @apply text-gray-800 rounded-b-lg bg-blue-500;
+
+
+
+  }
+}
+
+
+
+@layer utilities {
+  /* Custom Scrollbar Styles */
+
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    border-radius: 0 20px;
+    border-radius: 0px 5px 5px 0px;
+
+
+
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: #0080b7; /* Thumb color */
+    height: 20px;
+    border-radius: 0px 5px 5px 0px;
+   
+ 
+
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #8c8c8c; /* Track color */
+    border-radius: 0px 5px 5px 0px;
+   
+    
+  
+  }
 }

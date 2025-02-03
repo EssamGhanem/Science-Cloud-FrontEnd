@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from 'react'
-import SessionCard from '../session/SessionCard';
-import { IoMdAddCircle } from "react-icons/io";
+// import React, { useState } from 'react'
+// import SessionCard from '../session/SessionCard';
+// import { IoMdAddCircle } from "react-icons/io";
 import { course } from '@/components/types';
-import AddSesstion from '../session/AddSesstion';
-import { FaRegWindowClose } from "react-icons/fa";
+// import AddSesstion from '../session/AddSesstion';
+// import { FaRegWindowClose } from "react-icons/fa";
 
 
 
@@ -17,16 +17,16 @@ import { FaRegWindowClose } from "react-icons/fa";
 
 
 export default function CourseSessions(params: { course: course }) {
+console.log(params.course);
+  // const course = params.course;
+  // const [isOpenAddSession, setOpenAddSession] = useState(false)
 
-  const course = params.course;
-  const [isOpenAddSession, setOpenAddSession] = useState(false)
-
-  const openAddSession = () => {
-    setOpenAddSession(true);
-  }
-  const closeAddSession = () => {
-    setOpenAddSession(false);
-  }
+  // const openAddSession = () => {
+  //   setOpenAddSession(true);
+  // }
+  // const closeAddSession = () => {
+  //   setOpenAddSession(false);
+  // }
 
 
 
@@ -37,12 +37,12 @@ export default function CourseSessions(params: { course: course }) {
   return (
     <>
 
-      <div>
+      {/* <div>
         {
-          course.sessions.map((session, idx) => {
+          course.sections.map((session, idx) => {
             return (
               <>
-                <div key={idx}><SessionCard session={session} /></div>
+                <div key={idx}><SessionCard sections={session} /></div>
               </>
             )
           })
@@ -74,7 +74,7 @@ export default function CourseSessions(params: { course: course }) {
 
 
       </div>
-
+ */}
 
 
 

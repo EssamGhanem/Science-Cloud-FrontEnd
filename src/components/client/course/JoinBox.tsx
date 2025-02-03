@@ -1,4 +1,5 @@
 // import Link from 'next/link'
+import BuyButton from '@/components/helpers/BuyButton';
 import { course } from '@/components/types'
 import React from 'react'
 
@@ -16,8 +17,9 @@ export default function JoinBox(params: { course: course }) {
       </div>
 
       <div className=' w-full  flex justify-center  '>
-        <button className=' before:content-[""] before:w-[1000px] before:z-[0] before:h-[1000px] before:top-0  before:bg-prime px-5 bg-white before:absolute before:translate-x-[-4 0px] hover:text-white overflow-hidden before:duration-500 hover:before:translate-x-[200px] duration-300 hover:before:rotate-90 hover:before:top-[-100px]   relative before:rotate-45   w-full p-1 border-prime border-2 rounded-lg font-cairo text-[26px] max-lg:text-[22px] max-md:[16px] font-bold text-prime ' > <span className=' z-[1] relative'>شراء الأن</span></button>
-      </div>
+        {/* <button className=' before:content-[""] before:w-[1000px] before:z-[0] before:h-[1000px] before:top-0  before:bg-prime px-5 bg-white before:absolute before:translate-x-[-4 0px] hover:text-white overflow-hidden before:duration-500 hover:before:translate-x-[200px] duration-300 hover:before:rotate-90 hover:before:top-[-100px]   relative before:rotate-45   w-full p-1 border-prime border-2 rounded-lg font-cairo text-[26px] max-lg:text-[22px] max-md:[16px] font-bold text-prime ' > <span className=' z-[1] relative'>شراء الأن</span></button>*/}
+        <BuyButton course = { course} />
+      </div> 
 
 
     </div>

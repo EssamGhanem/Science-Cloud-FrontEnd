@@ -5,13 +5,12 @@ import Image from 'next/image';
 import SessionsList from '../session/SessionsList';
 import Enrolled from './Enrolled';
 import JoinBox from './JoinBox';
-import { groups } from '@/data';
-import { sessions } from '@/data';
+
 
 export default function CourseFound(params: { course: course }) {
   const course = params.course;
-  const courseGroups = groups.filter(group=> course.groupsId.includes(group.id));
-  console.log("courseGroups", courseGroups);
+  const sections = course.sections;
+
   const isEnrolled = false;
   const [enrolled, setEnrolled] = useState(false);
   
@@ -22,7 +21,7 @@ export default function CourseFound(params: { course: course }) {
     setEnrolled(isEnrolled);
 
 
-  }, [])
+  } ,[isEnrolled])
 
   return (
     <>
@@ -98,10 +97,10 @@ export default function CourseFound(params: { course: course }) {
           {/* course Sessions */}
           {
 
-            courseGroups.map( (group)=>{
-            return < div key={group.id} dir='rtl' className='sessions w-full  rounded-[5px]  '>
-            <p className='hh3 font-bold mb-4 font-cairo w-full text-prime '>{group.title}</p>
-            <SessionsList sessions={sessions} /></div>
+            sections.map( (section)=>{
+            return < div key={section._id} dir='rtl' className='sessions w-full  rounded-[5px]  '>
+            <p className='hh3 font-bold mb-4 font-cairo w-full text-prime '>{section.title}</p>
+            <SessionsList sessions={section.sessions} /></div>
           })
 
           }
